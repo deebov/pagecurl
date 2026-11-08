@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PDF viewer</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="bar">
+      <label class="open">
+        Open a PDF…
+        <input id="file" type="file" accept="application/pdf" hidden />
+      </label>
+      <span id="title" class="title">Loading…</span>
+      <div class="nav">
+        <button id="prev" type="button" aria-label="Previous page">←</button>
+        <span id="status">–</span>
+        <button id="next" type="button" aria-label="Next page">→</button>
+      </div>
+    </header>
+    <main class="stage">
+      <div id="book" class="book"></div>
+    </main>
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>

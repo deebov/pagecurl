@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "jsx": "react-jsx",
+    "strict": true,
+    "noImplicitOverride": true,
+    "noFallthroughCasesInSwitch": true,
+    "verbatimModuleSyntax": true,
+    "isolatedModules": true,
+    "skipLibCheck": true,
+    "noEmit": true,
+    "types": ["bun"],
+    "paths": {
+      "@pagecurl/core": ["./packages/core/src/index.ts"],
+      "@pagecurl/react": ["./packages/react/src/index.tsx"],
+      "@pagecurl/react-native": ["./packages/react-native/src/index.tsx"]
+    }
+  },
+  "include": ["packages/*/src", "packages/*/test", "demo", "site", "examples", "scripts"]
+}

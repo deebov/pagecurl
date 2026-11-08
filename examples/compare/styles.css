@@ -1,0 +1,206 @@
+:root {
+  color: #2b2b2b;
+  background: #efede8;
+  font:
+    15px / 1.4 system-ui,
+    sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 20px;
+  padding: 12px 16px;
+  border-bottom: 1px solid #dcd8d0;
+}
+
+.bar strong {
+  flex: 1;
+}
+
+.bar label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.nav {
+  display: flex;
+  gap: 8px;
+}
+
+.nav button {
+  padding: 6px 14px;
+  border: 1px solid #cfcac0;
+  border-radius: 8px;
+  background: #fff;
+  font: inherit;
+  cursor: pointer;
+}
+
+.stage {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  padding: 16px;
+}
+
+.stage section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.stage h2 {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #8a857b;
+}
+
+/* Two spreads stacked, each sized to fit half the window's height. */
+.book {
+  --h: min(calc((100vh - 190px) / 2), calc((100vw - 32px) / 1.44));
+  width: calc(var(--h) * 1.44);
+  height: var(--h);
+  background: #fff;
+  box-shadow: 0 14px 40px -14px rgb(0 0 0 / 0.25);
+}
+
+.hint {
+  margin: 0 0 16px;
+  text-align: center;
+  font-size: 13px;
+  color: #8a857b;
+}
+
+/* Pages. Sizes follow the book, so both books scale together, and so most come out fractional:
+   12.78px text on 19.81px lines. With "Whole-pixel sizes" every one is rounded instead. */
+
+.leaf {
+  --fs: calc(var(--h) * 0.036);
+  display: flex;
+  flex-direction: column;
+  padding: calc(var(--h) * 0.09) calc(var(--h) * 0.0576);
+  background: #fff;
+  font-family: Nunito, system-ui, sans-serif;
+  font-size: var(--fs);
+  color: #2b2b2b;
+}
+
+.exaggerate .leaf {
+  font-family: 'Condensed', serif;
+}
+
+.kicker {
+  font-size: 0.85em;
+  font-weight: 700;
+  color: #f0734f;
+}
+
+.leaf h3 {
+  margin: 0.4em 0 0.6em;
+  font-size: 1.9em;
+  font-weight: 800;
+  line-height: 1.12;
+}
+
+.leaf p {
+  margin: 0 0 1em;
+  line-height: 1.55;
+  color: #555;
+}
+
+.leaf p.small {
+  font-size: 0.8em;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+}
+
+.chips span {
+  padding: 0.35em 0.8em;
+  border-radius: 999px;
+  background: #f2f2f2;
+  font-weight: 600;
+}
+
+.cover {
+  justify-content: flex-end;
+  background: linear-gradient(160deg, #fff4ec, #ffd9c7 55%, #ffb59b);
+}
+
+.cover h3 {
+  font-size: 2.4em;
+}
+
+.folio {
+  margin-top: auto;
+  font-size: 0.8em;
+  color: #aaa;
+}
+
+/* "Whole-pixel sizes": the same sizes, each rounded to a whole pixel. */
+
+.whole .leaf {
+  --fs: round(calc(var(--h) * 0.036), 1px);
+  padding: round(calc(var(--h) * 0.09), 1px) round(calc(var(--h) * 0.0576), 1px);
+  line-height: round(calc(var(--fs) * 1.4), 1px);
+}
+
+.whole .kicker {
+  font-size: round(calc(var(--fs) * 0.85), 1px);
+}
+
+.whole .leaf h3 {
+  margin: round(calc(var(--fs) * 0.4), 1px) 0 round(calc(var(--fs) * 0.6), 1px);
+  font-size: round(calc(var(--fs) * 1.9), 1px);
+  line-height: round(calc(var(--fs) * 2.1), 1px);
+}
+
+.whole .cover h3 {
+  font-size: round(calc(var(--fs) * 2.4), 1px);
+  line-height: round(calc(var(--fs) * 2.7), 1px);
+}
+
+.whole .leaf p {
+  line-height: round(calc(var(--fs) * 1.55), 1px);
+}
+
+.whole .leaf p.small {
+  font-size: round(calc(var(--fs) * 0.8), 1px);
+  line-height: round(calc(var(--fs) * 1.25), 1px);
+}
+
+.whole .chips {
+  gap: round(calc(var(--fs) * 0.5), 1px);
+}
+
+.whole .chips span {
+  padding: round(calc(var(--fs) * 0.35), 1px) round(calc(var(--fs) * 0.8), 1px);
+}
+
+.whole .folio {
+  font-size: round(calc(var(--fs) * 0.8), 1px);
+}

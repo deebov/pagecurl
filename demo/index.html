@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>pagecurl demo</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <section class="vanilla">
+      <div class="vanilla-copy">
+        <h2>Without a framework</h2>
+        <p>
+          The React component is a thin layer over <code>@pagecurl/core</code>. Hand it any element
+          and its children become pages.
+        </p>
+        <pre><code>import { createPageCurl } from '@pagecurl/core';
+
+const curl = createPageCurl(postcard);
+nextButton.onclick = () =&gt; curl.next();</code></pre>
+        <div class="row">
+          <button type="button" id="postcard-prev">Previous</button>
+          <span id="postcard-status" class="indicator"></span>
+          <button type="button" id="postcard-next">Next</button>
+        </div>
+        <label class="toggle"><input type="checkbox" id="postcard-auto" /> Play on a loop</label>
+      </div>
+
+      <div class="postcard" id="postcard">
+        <div class="card card-photo">
+          <span class="stamp">Greetings from<br /><strong>the coast</strong></span>
+        </div>
+        <div class="card card-message">
+          <p class="hand">
+            Arrived at last. The light here does something strange in the evenings, and the sea is
+            louder than I remembered. Wish you were here.
+          </p>
+          <div class="address">
+            <span>To:</span>
+            <span>A. Reader</span>
+            <span>12 Harbour Row</span>
+            <span>Somewhere inland</span>
+          </div>
+        </div>
+        <div class="card card-map">
+          <svg viewBox="0 0 300 200" role="img" aria-label="A map of the bay">
+            <path d="M0 0H300V200H0Z" fill="#d9ecf2" />
+            <path
+              d="M0 40 C60 30 90 80 140 70 S220 20 300 50 V200 H0Z"
+              fill="#efe4c8"
+              stroke="#b9a77c"
+              stroke-width="2"
+            />
+            <circle cx="150" cy="120" r="6" fill="#e5533d" />
+            <text x="162" y="124" font-size="14" fill="#5b4b2a">You are here</text>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <script type="module" src="./app.tsx"></script>
+  </body>
+</html>

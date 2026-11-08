@@ -1,0 +1,13 @@
+// Cloudflare Workers config for the landing page: `bun run site:deploy` builds it and serves
+// site/dist as static files on pagecurl.co (and on workers.dev). The routes sit in front of the
+// zone's existing proxied DNS records, so those stay as they are.
+{
+  "name": "pagecurl",
+  "compatibility_date": "2026-11-01",
+  "assets": { "directory": "./dist" },
+  "workers_dev": true,
+  "routes": [
+    { "pattern": "pagecurl.co/*", "zone_name": "pagecurl.co" },
+    { "pattern": "www.pagecurl.co/*", "zone_name": "pagecurl.co" },
+  ],
+}

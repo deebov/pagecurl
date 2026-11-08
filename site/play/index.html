@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover"
+    />
+    <title>pagecurl · Full-screen demo</title>
+    <meta name="description" content="The pagecurl demo book, full screen." />
+    <link rel="canonical" href="https://pagecurl.co/" />
+    <meta name="robots" content="noindex" />
+    <!-- Added to the home screen, it opens with no browser bars round it, for recording. The
+         status bar is opaque, in the colour of the page showing (see demo.tsx). On iOS 26 a
+         translucent one blurs the top of the page and leaves a strip at the bottom that can't be
+         painted (WebKit bug 301108). -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="pagecurl" />
+    <meta name="theme-color" content="#efe9dc" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      crossorigin
+      href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=UnifrakturMaguntia&display=swap"
+    />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body class="play">
+    <div id="root"></div>
+    <script type="module" src="./main.tsx"></script>
+  </body>
+</html>

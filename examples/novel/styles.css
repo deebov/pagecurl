@@ -1,0 +1,169 @@
+:root {
+  --paper: #fbf7ef;
+  --ink: #2d2924;
+  --faint: #9a9085;
+  background: #e9e4da;
+  color: var(--ink);
+  font:
+    15px / 1.4 system-ui,
+    sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 20px;
+  color: #6f665c;
+}
+
+.bar select,
+.bar button {
+  padding: 6px 10px;
+  border: 1px solid #cfc7ba;
+  border-radius: 8px;
+  background: #f6f2ea;
+  color: inherit;
+  font: inherit;
+}
+
+.stage {
+  flex: 1;
+  display: grid;
+  place-items: center;
+  min-height: 0;
+  padding: 8px 24px 32px;
+}
+
+.book {
+  background: var(--paper);
+  box-shadow:
+    0 1px 2px rgb(60 40 20 / 0.08),
+    0 24px 60px -24px rgb(60 40 20 / 0.35);
+}
+
+/* A page of the book. The paginator measures with the same markup, so keep them in sync. */
+
+.leaf {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 7% 9% 5%;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: Literata, Georgia, serif;
+  font-size: var(--text, 16px);
+  font-optical-sizing: auto;
+}
+
+.running,
+.folio {
+  flex: none;
+  font-size: 0.72em;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--faint);
+  text-align: center;
+}
+
+.running {
+  margin-bottom: 1.6em;
+}
+
+.folio {
+  margin-top: 1.2em;
+  letter-spacing: 0;
+}
+
+.body {
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+  line-height: 1.55;
+  text-align: justify;
+  hyphens: auto;
+}
+
+.body p {
+  margin: 0;
+  text-indent: 1.4em;
+}
+
+.body p.first,
+.body p.cont {
+  text-indent: 0;
+}
+
+.body p.split {
+  text-align-last: justify;
+}
+
+.body .verse {
+  margin: 0.8em 0 0.8em 2em;
+  text-align: left;
+  font-style: italic;
+}
+
+.body .verse span {
+  display: block;
+}
+
+.body .break {
+  margin: 0.6em 0;
+  text-align: center;
+  color: var(--faint);
+}
+
+.body .opener {
+  padding-top: 22%;
+  margin-bottom: 2.2em;
+  text-align: center;
+}
+
+.opener small {
+  display: block;
+  margin-bottom: 0.8em;
+  font-size: 0.75em;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--faint);
+}
+
+.opener h2 {
+  margin: 0;
+  font-size: 1.6em;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.title-page {
+  justify-content: center;
+  text-align: center;
+}
+
+.title-page h1 {
+  margin: 0 0 0.6em;
+  font-size: 2.1em;
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+.title-page p {
+  margin: 0;
+  color: var(--faint);
+}

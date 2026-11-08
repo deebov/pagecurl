@@ -1,0 +1,32 @@
+{
+  "name": "pagecurl-workspace",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "bun scripts/build.ts",
+    "test": "bun test",
+    "typecheck": "tsc --noEmit",
+    "lint": "bun lint",
+    "format": "bun fmt",
+    "check": "bun fmt --check && bun lint && tsc --noEmit && bun test",
+    "demo": "bun --port 3000 demo/index.html",
+    "demo:build": "bun scripts/build-page.ts demo",
+    "site": "bun --port 3001 site/index.html site/play/index.html site/react-native/index.html",
+    "site:build": "bun scripts/build-page.ts site",
+    "site:deploy": "bun run site:build && bunx wrangler deploy --config site/wrangler.jsonc",
+    "examples": "bun --port 3002 examples/*/index.html"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "pdfjs-dist": "6.4.299",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "shiki": "3",
+    "typescript": "^7.0.2"
+  }
+}

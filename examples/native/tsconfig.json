@@ -1,0 +1,9 @@
+{
+  "extends": "expo/tsconfig.base",
+  "compilerOptions": {
+    "strict": true,
+    "paths": {
+      "@pagecurl/react-native": ["../../packages/react-native/dist/types/index.d.ts"]
+    }
+  }
+}

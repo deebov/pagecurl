@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Default vs liveFlat</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      crossorigin
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="bar">
+      <strong>Default vs <code>liveFlat</code></strong>
+      <label title="Rounds every font size, line height and padding to a whole pixel">
+        <input id="whole" type="checkbox" /> Whole-pixel sizes
+      </label>
+      <label><input id="slow" type="checkbox" /> Slow turns</label>
+      <label
+        title="Switches the pages to a font loaded from script, which the snapshot can't embed"
+      >
+        <input id="exaggerate" type="checkbox" /> Exaggerate
+      </label>
+      <div class="nav">
+        <button id="prev" type="button" aria-label="Previous page">←</button>
+        <button id="next" type="button" aria-label="Next page">→</button>
+      </div>
+    </header>
+    <main class="stage">
+      <section>
+        <h2>Default</h2>
+        <div id="default" class="book"></div>
+      </section>
+      <section>
+        <h2><code>liveFlat</code></h2>
+        <div id="live" class="book"></div>
+      </section>
+    </main>
+    <p class="hint">← → or the buttons turn both books together. Drag either one on its own.</p>
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>
