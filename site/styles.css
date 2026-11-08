@@ -172,10 +172,12 @@ main {
   display: flex;
   align-items: center;
   gap: 18px;
+  max-width: 100%;
   margin-top: 40px;
 }
 
 .round {
+  flex: none;
   width: 44px;
   height: 44px;
   border: 1px solid var(--line);
@@ -196,12 +198,22 @@ main {
   cursor: default;
 }
 
+/* Each dot sits in a cell that gives up its spacing when the row is short of room, as on a phone. */
 .dots {
   display: flex;
-  gap: 8px;
+  min-width: 0;
 }
 
 .dots span {
+  display: flex;
+  flex: 0 1 auto;
+  width: 15px;
+  justify-content: center;
+  min-width: 7px;
+}
+
+.dots span::before {
+  content: '';
   width: 7px;
   height: 7px;
   border-radius: 50%;
@@ -211,7 +223,7 @@ main {
     transform 0.2s;
 }
 
-.dots span.on {
+.dots span.on::before {
   background: var(--ink);
   transform: scale(1.15);
 }
@@ -739,6 +751,10 @@ html {
     padding: 20px 16px 0;
   }
 
+  .controls {
+    gap: 12px;
+  }
+
   .links {
     gap: 2px;
   }
@@ -761,6 +777,15 @@ html {
   .links a.text-link {
     padding: 0 4px;
     font-size: 14px;
+  }
+
+  .dots span {
+    min-width: 5px;
+  }
+
+  .dots span::before {
+    width: 5px;
+    height: 5px;
   }
 }
 
