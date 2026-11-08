@@ -28,6 +28,12 @@ body {
   background: var(--bg);
 }
 
+/* A page lifted mid-turn can reach past the edge of a phone's screen. Clipped here, it doesn't
+   widen the page, which the phone would zoom out to fit as soon as a turn starts. */
+#root {
+  overflow-x: clip;
+}
+
 a {
   color: inherit;
 }
